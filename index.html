@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Librería para los estilos  -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <!-- Librería de angular version 1.6.4  -->
+    <script type="text/javascript" src="angular.min.js"></script>
+    <!-- Título de la pagina ( Nombre del programa )  -->
+    <title>Concatenador</title>
+</head>
+<body ng-app="MiApp">
+    <div class="container">
+       <!-- Nombre de la aplicación  -->
+       <h1>Concatenador</h1>
+        <form action="" class=" md-form ">
+            <div class="form-group">
+                <!-- Etiqueta para la caja de texto 1  -->
+                <label for="texto1"> Texto 1 </label>
+                <!-- Al ercribir , angular detecta los cambios y vuelve a asignar los valores de la concatenacion  -->
+                <input type="text" class="form-control border-primary" id="texto1" name="texto1" ng-model="texto1">
+            </div>
+            <div class="form-group">
+                <!-- Etiqueta para la caja de texto 2  -->
+                <label for="texto2"> Texto 2 </label>
+                <!-- Al ercribir , angular detecta los cambios y vuelve a asignar los valores de la concatenacion  -->
+                <input type="text" class="form-control border-warning" id="texto2" name="texto2" ng-model="texto2" >
+            </div>
+            <div class="form-group">
+                <!-- Etiqueta para la caja de texto 3  -->
+                <label for="texto3"> Textos concatenados </label>
+                <!-- Se le asigna la concatencacion del texto1 con el texto2 -->
+                <input type="text" class="form-control border-success" id="texto3" name="texto3" 
+                value=" {{ texto1 + texto2 }} " disabled>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    // Iniciamos la aplicación de angular la cual estara al pendiente de cambios
+    // en las variables de los modelos 
+    var App = angular.module('MiApp', []);
+</script>
+</html>
